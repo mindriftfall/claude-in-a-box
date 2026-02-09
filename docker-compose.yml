@@ -1,0 +1,14 @@
+services:
+  claude:
+    build: ./claude-code
+    image: claude-code
+    container_name: claude-code
+    stdin_open: true
+    tty: true
+    volumes:
+      - claude-data:/home/claude
+      - .:/workspace
+    working_dir: /workspace
+
+volumes:
+  claude-data:
